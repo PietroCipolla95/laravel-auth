@@ -22,16 +22,22 @@
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+
 </head>
 
 <body>
     <div id="app">
 
+
         @include('partials.header')
 
+        <main class="">
+            <h1 class="text-center py-5">
+                Welcome Admin
+            </h1>
 
-        <main>
             @yield('content')
+
         </main>
     </div>
 </body>
