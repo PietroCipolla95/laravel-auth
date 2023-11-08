@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('title', 50);
             $table->text('description');
             $table->string('slug');
-            $table->string('cover_image')->nullable();
-            $table->$table->timestamps();
+            $table->text('cover_image')->nullable();
+            $table->timestamps();
         });
     }
 
