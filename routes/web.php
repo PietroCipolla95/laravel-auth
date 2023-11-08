@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::resource('admin/dashboard', ProjectController::class);
 
-Route::middleware(['auth', 'verified'])->name('admin')->prefix('admin')->group(function () {
+Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 });
 
