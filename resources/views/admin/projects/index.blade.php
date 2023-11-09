@@ -6,11 +6,13 @@
             Your Projects
         </h2>
 
+        @include('partials.message')
+
         <a class="btn btn-primary my-4 ms-4 position-fixed top-10 end-0 me-3" href="{{ route('admin.projects.create') }}">
             Add Project
         </a>
 
-        <div class="table-responsive border my-4">
+        <div class="table-responsive my-4">
             <table class="table table-light">
                 <thead>
                     <tr>
@@ -39,17 +41,17 @@
                             </td>
                             <td>
                                 <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary">
-                                    View
+                                    <i class="fa-solid fa-eye"></i>
                                 </a>
                                 <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-secondary">
-                                    Edit
+                                    <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
 
 
                                 <!-- Modal trigger button -->
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                     data-bs-target="#modalId-{{ $project->id }}">
-                                    Delete
+                                    <i class="fa-solid fa-trash"></i>
                                 </button>
 
                                 <!-- Modal Body -->
@@ -71,10 +73,13 @@
                                                     data-bs-dismiss="modal">Close</button>
 
                                                 <!-- Delete form -->
-                                                <form action="" method="POST">
+                                                <form action="{{ route('admin.projects.destroy', $project->id) }}"
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">DELETE</button>
+                                                    <button type="submit" class="btn btn-danger">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
                                                 </form>
                                             </div>
                                         </div>

@@ -8,19 +8,14 @@
         <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-info mx-5">Edit</a>
     </div>
 
-    @if (session('message'))
-        <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <strong> {{ session('message') }} </strong>
-        </div>
-    @endif
+    @include('partials.message')
 
 
-    <div class="container my-3">
+    <div class="container my-5">
         <div class="row">
             {{-- left col with preview image --}}
             <div class="col">
-                <img width="700px" src="{{ asset('storage/' . $project->cover_image) }}"
+                <img width="650px" src="{{ asset('storage/' . $project->cover_image) }}"
                     alt="{{ $project->title . 'image' }}">
             </div>
             {{-- right column with description and links --}}
@@ -35,32 +30,29 @@
                 </div>
                 {{-- projects links wrapper --}}
                 <div>
-                    <h4>
-                        Links
-                    </h4>
-                    <div class="d-flex">
-                        {{-- git hub --}}
-                        <div class="pe-5">
-                            <h5>
-                                Git Hub
-                            </h5>
-                            <a href="{{ $project->git_link }}" class="text-decoration-none text-info">
-                                {{ $project->git_link }}
-                            </a>
-                        </div>
-                        {{-- project link --}}
-                        <div>
-                            <h5>
-                                Project
-                            </h5>
-                            <a href="{{ $project->project_link }}" class="text-decoration-none text-info">
-                                {{ $project->project_link }}
-                            </a>
-                        </div>
+                    {{-- git hub --}}
+                    <div class="pt-5 pb-4">
+                        <h5>
+                            Git Hub <i class="fa-brands fa-github"></i>
+                        </h5>
+                        <a href="{{ $project->git_link }}" class="text-decoration-none text-info">
+                            {{ $project->git_link }}
+                        </a>
+                    </div>
+                    {{-- project link --}}
+                    <div>
+                        <h5>
+                            Project <i class="fa-solid fa-earth-europe"></i>
+                        </h5>
+                        <a href="{{ $project->project_link }}" class="text-decoration-none text-info">
+                            {{ $project->project_link }}
+                        </a>
                     </div>
                 </div>
+
             </div>
         </div>
+    </div>
 
     </div>
 @endsection

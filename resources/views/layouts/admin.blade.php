@@ -33,7 +33,7 @@
 
         <main class="d-flex">
 
-            <section id="left_bar" class="min-vh-100 bg-info">
+            <section id="left_bar" class="min-vh-100 bg-info border-end border-2 border-black">
                 {{-- dashboard links wrapper --}}
                 <div class="row">
                     <div class="col d-flex flex-column justify-content-center p-5">
