@@ -29,7 +29,7 @@
                                 {{ $project->id }}
                             </td>
                             <td>
-                                <img src="{{ asset('storage/app/' . $project->cover_image) }}" alt="">
+                                <img width="150px" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
                             </td>
                             <td>
                                 {{ $project->title }}

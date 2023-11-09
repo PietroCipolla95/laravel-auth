@@ -21,8 +21,10 @@ class ProjectSeeder extends Seeder
 
             $project->title = $faker->realText(20);
             $project->description = $faker->realText();
+            $project->git_link = $faker->realText();
+            $project->project_link = $faker->realText();
             $project->slug = Str::slug($project->title, '-');
-            $project->cover_image = 'cover_images/' . $faker->image('storage/app/public/cover_images', fullPath: true);
+            $project->cover_image = $faker->image('public/storage/cover_images', fullPath: false);
 
             $project->save();
         }
