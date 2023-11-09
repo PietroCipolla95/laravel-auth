@@ -25,12 +25,5 @@
             </div>
         </div>
 
-        <h2 class="fs-4 text-secondary my-4">
-            Your Projects
-            <a class="text-dark text-decoration-none" href="{{ route('admin.projects.index') }}">
-                <i class="fa-solid fa-arrow-right-to-bracket"></i>
-            </a>
-        </h2>
-
     </div>
 @endsection

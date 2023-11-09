@@ -69,7 +69,27 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $val_data = $request->validated();
+
+        if ($request->has('cover_image')) {
+
+            $newCover = $request->cover_image;
+            $path = Storage::put('cover_images', $newCover);
+
+            if (!is_null($project->cover_image) && Storage::fileExists($project->cover_images)) {
+
+                Storage::delete($project->cover_image);
+            }
+
+            $val_data['cover_image'] = $path;
+        }
+
+
+        $val_data['slug'] = Str::slug($request->title, '-');
+
+        $project->update($val_data);
+
+        return to_route('admin.projects.show', $project)->with('message', 'Project updated!');
     }
 
     /**
@@ -77,6 +97,13 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+
+        if (!is_null($project->cover_image)) {
+            Storage::delete($project->cover_image);
+        }
+
+        $project->delete();
+
+        return to_route('admin.projects.index')->with('message', 'You removed the project!');
     }
 }
