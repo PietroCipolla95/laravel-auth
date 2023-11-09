@@ -31,9 +31,32 @@
 
         @include('partials.header')
 
-        <main class="">
+        <main class="d-flex">
 
-            @yield('content')
+            <section id="left_bar" class="min-vh-100 bg-info">
+                {{-- dashboard links wrapper --}}
+                <div class="row">
+                    <div class="col d-flex flex-column justify-content-center p-5">
+                        <a href="{{ route('admin.dashboard') }}" class="text-decoration-none fs-5 text-dark">
+                            <i class="fa-solid fa-landmark"></i>
+                            <span>
+                                Dashboard
+                            </span>
+                        </a>
+                        <a href="{{ route('admin.projects.index') }}" class="text-decoration-none fs-5 text-dark py-3">
+                            <i class="fa-solid fa-list-check"></i>
+                            <span>
+                                Projects
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="content" class="col">
+                @yield('content')
+            </section>
 
         </main>
     </div>

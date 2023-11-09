@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="bg-secondary py-4 text-center d-flex justify-content-center align-items-center">
+    <div class="bg-dark py-4 text-center text-info d-flex justify-content-center align-items-center">
         <h1>
             {{ $project->title }}
         </h1>

@@ -6,7 +6,7 @@
             Your Projects
         </h2>
 
-        <a class="btn btn-primary my-4 ms-4 position-fixed top-10 start-0" href="{{ route('admin.projects.create') }}">
+        <a class="btn btn-primary my-4 ms-4 position-fixed top-10 end-0 me-2" href="{{ route('admin.projects.create') }}">
             Add Project
         </a>
 
