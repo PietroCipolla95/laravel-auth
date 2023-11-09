@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
+use illuminate\Support\Str;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -22,15 +26,26 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        //
+        $val_data = $request->validated();
+
+        if ($request->has('cover_image')) {
+            $path = Storage::put('cover_images', $request->cover_image);
+            $val_data['cover_image'] = $path;
+        }
+
+        $val_data['slug'] = Str::slug($request->title, '-');
+
+        $newProject = Project::create($val_data);
+
+        return to_route('admin.projects.show', $newProject)->with('message', 'You created a new project!');
     }
 
     /**

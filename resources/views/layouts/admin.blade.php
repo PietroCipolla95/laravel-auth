@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'My Portfolio') }}</title>
 
 
     <!-- Fonts -->
@@ -32,9 +32,6 @@
         @include('partials.header')
 
         <main class="">
-            <h1 class="text-center py-5">
-                Welcome Admin
-            </h1>
 
             @yield('content')
 

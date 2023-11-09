@@ -6,8 +6,12 @@
             Your Projects
         </h2>
 
-        <div class="table-responsive border border-dark my-4">
-            <table class="table table-info">
+        <a class="btn btn-primary my-4 ms-4 position-fixed top-10 start-0" href="{{ route('admin.projects.create') }}">
+            Add Project
+        </a>
+
+        <div class="table-responsive border my-4">
+            <table class="table table-light">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -25,7 +29,7 @@
                                 {{ $project->id }}
                             </td>
                             <td>
-                                {{ $project->cover_image }}
+                                <img src="{{ asset('storage/app/' . $project->cover_image) }}" alt="">
                             </td>
                             <td>
                                 {{ $project->title }}
@@ -34,8 +38,12 @@
                                 {{ $project->created_at }}
                             </td>
                             <td>
-                                <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary">View</a>
-                                <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-secondary">Edit</a>
+                                <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary">
+                                    View
+                                </a>
+                                <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-secondary">
+                                    Edit
+                                </a>
 
 
                                 <!-- Modal trigger button -->
