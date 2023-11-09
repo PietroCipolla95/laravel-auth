@@ -17,6 +17,50 @@
 
 
     <div class="container my-3">
-        <img class=" w-50" src="{{ asset('storage/' . $project->cover_image) }}" alt="{{ $project->title . 'image' }}">
+        <div class="row">
+            {{-- left col with preview image --}}
+            <div class="col">
+                <img width="700px" src="{{ asset('storage/' . $project->cover_image) }}"
+                    alt="{{ $project->title . 'image' }}">
+            </div>
+            {{-- right column with description and links --}}
+            <div class="col">
+                <div>
+                    <h4>
+                        Description
+                    </h4>
+                    <p>
+                        {{ $project->description }}
+                    </p>
+                </div>
+                {{-- projects links wrapper --}}
+                <div>
+                    <h4>
+                        Links
+                    </h4>
+                    <div class="d-flex">
+                        {{-- git hub --}}
+                        <div class="pe-5">
+                            <h5>
+                                Git Hub
+                            </h5>
+                            <a href="{{ $project->git_link }}" class="text-decoration-none text-info">
+                                {{ $project->git_link }}
+                            </a>
+                        </div>
+                        {{-- project link --}}
+                        <div>
+                            <h5>
+                                Project
+                            </h5>
+                            <a href="{{ $project->project_link }}" class="text-decoration-none text-info">
+                                {{ $project->project_link }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 @endsection
