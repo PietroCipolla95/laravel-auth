@@ -19,6 +19,8 @@
                         <th>ID</th>
                         <th>Image</th>
                         <th>Title</th>
+                        <th>GitHub</th>
+                        <th>Project Link</th>
                         <th>Created</th>
                         <th>Actions</th>
                     </tr>
@@ -35,6 +37,16 @@
                             </td>
                             <td>
                                 {{ $project->title }}
+                            </td>
+                            <td>
+                                <a href="{{ $project->git_link }}" class="text-decoration-none text-info">
+                                    {{ $project->git_link }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ $project->project_link }}" class="text-decoration-none text-info">
+                                    {{ $project->project_link }}
+                                </a>
                             </td>
                             <td>
                                 {{ $project->created_at }}
