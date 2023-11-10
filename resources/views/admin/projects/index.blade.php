@@ -9,6 +9,8 @@
         @include('partials.message')
 
 
+        {{ $projects->links('pagination::bootstrap-5') }}
+
         <div class="table-responsive my-4">
             <table class="table border table-striped table-hover table-light">
                 <thead>
@@ -110,6 +112,8 @@
                 </tbody>
             </table>
         </div>
+
+        {{ $projects->links('pagination::bootstrap-5') }}
 
 
 
