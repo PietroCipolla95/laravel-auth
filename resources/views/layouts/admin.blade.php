@@ -33,34 +33,40 @@
 
         <main class="d-flex">
 
-            <section id="left_bar" class="min-vh-100 bg-info border-end border-2 border-black">
+            <section id="left_bar" class="min-vh-100 bg-dark border-end border-2 border-dark">
                 {{-- dashboard links wrapper --}}
                 <div class="row">
                     <div class="col d-flex flex-column justify-content-center p-5">
-                        <a href="{{ route('admin.dashboard') }}" class="text-decoration-none fs-5 text-dark">
-                            <i class="fa-solid fa-landmark"></i>
-                            <span>
-                                Dashboard
-                            </span>
-                        </a>
-                        <a href="{{ route('admin.projects.index') }}" class="text-decoration-none fs-5 text-dark py-3">
-                            <i class="fa-solid fa-list-check"></i>
-                            <span>
+
+                        <button class="btn btn-secondary btn-outline-info">
+                            <a href="{{ route('admin.dashboard') }}" class="text-decoration-none fs-5 text-light">
+                                <i class="fa-solid fa-landmark"></i>
+                                <span>
+                                    Dashboard
+                                </span>
+                            </a>
+                        </button>
+                        <button class="btn btn-secondary btn-outline-info my-3">
+                            <a href="{{ route('admin.projects.index') }}" class="text-decoration-none fs-5 text-light">
+                                <i class="fa-solid fa-list-check"></i>
                                 Projects
-                            </span>
-                        </a>
-                        <a href="{{ route('admin.projects.create') }}" class="text-decoration-none fs-5 text-dark">
-                            <i class="fa-solid fa-pen-ruler"></i>
-                            <span>
-                                Create Project
-                            </span>
-                        </a>
+                            </a>
+                        </button>
+                        <button class="btn btn-secondary btn-outline-info">
+                            <a href="{{ route('admin.projects.create') }}" class="text-decoration-none fs-5 text-light">
+                                <i class="fa-solid fa-pen-ruler"></i>
+                                <span>
+                                    Create Project
+                                </span>
+                            </a>
+                        </button>
+
                     </div>
                 </div>
             </section>
 
 
-            <section id="content" class="col">
+            <section id="content" class="col bg-secondary">
                 @yield('content')
             </section>
 

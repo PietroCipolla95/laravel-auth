@@ -1,5 +1,5 @@
-<header class="border-bottom border-2 border-black">
-    <nav class="navbar navbar-expand-md navbar-light bg-info shadow-sm py-3">
+<header class="border-bottom border-2 border-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm py-3">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center fs-3" href="{{ url('/') }}">
                 My Portfolio

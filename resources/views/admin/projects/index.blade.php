@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="fs-2 text-secondary my-4">
+        <h2 class="fs-2 text-dark my-4">
             Your Projects
         </h2>
 
@@ -10,7 +10,7 @@
 
 
         <div class="table-responsive my-4">
-            <table class="table table-light">
+            <table class="table border table-striped table-hover table-light">
                 <thead>
                     <tr>
                         <th>ID</th>
