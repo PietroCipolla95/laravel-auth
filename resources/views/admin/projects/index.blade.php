@@ -8,9 +8,6 @@
 
         @include('partials.message')
 
-        <a class="btn btn-primary my-4 ms-4 position-fixed top-10 end-0 me-3" href="{{ route('admin.projects.create') }}">
-            Add Project
-        </a>
 
         <div class="table-responsive my-4">
             <table class="table table-light">
@@ -39,7 +36,7 @@
                                 {{ $project->title }}
                             </td>
                             <td>
-                                <a href="{{ $project->git_link }}" class="text-decoration-none text-info">
+                                <a href="{{ url($project->git_link) }}" class="text-decoration-none text-info">
                                     {{ $project->git_link }}
                                 </a>
                             </td>

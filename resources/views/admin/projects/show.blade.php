@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="bg-dark py-4 text-center text-info d-flex justify-content-center align-items-center">
+        <a href="{{ route('admin.projects.index') }}" class="btn btn-info mx-5">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
         <h1>
             {{ $project->title }}
         </h1>

@@ -49,6 +49,12 @@
                                 Projects
                             </span>
                         </a>
+                        <a href="{{ route('admin.projects.create') }}" class="text-decoration-none fs-5 text-dark">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>
+                                Create Project
+                            </span>
+                        </a>
                     </div>
                 </div>
             </section>
