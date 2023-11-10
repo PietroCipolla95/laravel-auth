@@ -50,7 +50,7 @@
                             </span>
                         </a>
                         <a href="{{ route('admin.projects.create') }}" class="text-decoration-none fs-5 text-dark">
-                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-pen-ruler"></i>
                             <span>
                                 Create Project
                             </span>
